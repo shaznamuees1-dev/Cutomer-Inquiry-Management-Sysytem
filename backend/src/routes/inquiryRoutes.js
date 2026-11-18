@@ -1,22 +1,33 @@
 
 const express = require("express");
 
-// Import the authentication middleware.
+// Import authentication middleware.
 const authenticate = require("../middleware/authenticate");
+
+// Import inquiry controller functions.
+const {
+  createInquiry,
+  getInquiries,
+  getInquiryById,
+  updateInquiryStatus,
+} = require("../controllers/inquiryController");
 
 // Create an Express router.
 const router = express.Router();
 
-// Protect every route in this router.
-// Requests without a valid JWT will be rejected.
+// Protect all inquiry routes with JWT authentication.
 router.use(authenticate);
 
-// Temporary route to confirm authentication works.
-router.get("/", (req, res) => {
-  res.status(200).json({
-    message: "Inquiry API is protected",
-    staffId: req.user.id
-  });
-});
+// GET /api/inquiries - List staff inquiries.
+router.get("/", getInquiries);
+
+// GET /api/inquiries/:id - View one inquiry.
+router.get("/:id", getInquiryById);
+
+// POST /api/inquiries - Create an inquiry.
+router.post("/", createInquiry);
+
+// PATCH /api/inquiries/:id/status - Update inquiry status.
+router.patch("/:id/status", updateInquiryStatus);
 
 module.exports = router;
