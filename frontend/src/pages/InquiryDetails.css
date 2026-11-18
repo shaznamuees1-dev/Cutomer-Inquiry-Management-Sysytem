@@ -1,0 +1,138 @@
+
+.details-page {
+  min-height: 100vh;
+  background: #f5f7fa;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+  color: #252525;
+}
+
+.details-card {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 35px;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+}
+
+.details-back {
+  background: transparent;
+  border: none;
+  color: #78452e;
+  cursor: pointer;
+  font-weight: 600;
+  padding: 0;
+  margin-bottom: 28px;
+}
+
+.details-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.details-heading h1 {
+  margin: 0 0 8px;
+}
+
+.details-heading p {
+  color: #777;
+  margin: 0;
+}
+
+.details-status {
+  background: #f3f0ed;
+  color: #78452e;
+  padding: 9px 14px;
+  border-radius: 20px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.details-info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 24px 0;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.details-info dt {
+  color: #777;
+  margin-bottom: 7px;
+}
+
+.details-info dd {
+  margin: 0;
+  font-weight: 600;
+}
+
+.details-description {
+  white-space: pre-wrap;
+  line-height: 1.7;
+}
+
+.details-update {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.details-update select {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  min-width: 200px;
+}
+
+.details-update button {
+  background: #78452e;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.details-update button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.details-update .refresh-button {
+  background: #f3f0ed;
+  color: #78452e;
+}
+
+.details-success {
+  color: #227542;
+  font-weight: 600;
+}
+
+.details-error {
+  color: #b42318;
+  font-weight: 600;
+}
+
+@media (max-width: 650px) {
+  .details-card {
+    padding: 24px;
+  }
+
+  .details-info {
+    grid-template-columns: 1fr;
+  }
+
+  .details-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
